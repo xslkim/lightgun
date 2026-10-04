@@ -1,0 +1,46 @@
+{
+  "schema_version": "0.1",
+  "game_id": "industrial_rail_sample",
+  "level_id": "three_station_slice",
+  "seed": 1042026,
+  "start": "entry",
+  "stations": [
+    {
+      "id": "entry",
+      "environment_asset": "room_industrial",
+      "camera": {"position_m": [0, 1.6, 6], "look_at_m": [0, 1.5, 0], "fov_deg": 60},
+      "settle_ms": 500,
+      "anchors": [{"id": "front_left", "position_m": [-2, 0, -2]}],
+      "spawns": [
+        {"id": "melee_01", "asset": "enemy_melee", "anchor": "front_left", "role": "normal", "cue_ms": 0, "spawn_ms": 350, "targetable_ms": 900, "telegraph_ms": 1200, "attack_ms": 2000}
+      ],
+      "gate": {"mode": "all_resolved", "terminal_states": ["dead", "escaped", "disarmed"], "timeout_ms": 30000, "on_timeout": "fail"},
+      "next": "hall"
+    },
+    {
+      "id": "hall",
+      "environment_asset": "room_industrial",
+      "camera": {"position_m": [0, 1.6, -10], "look_at_m": [0, 1.5, -18], "fov_deg": 60},
+      "settle_ms": 500,
+      "anchors": [{"id": "left", "position_m": [-2, 0, -18]}, {"id": "right", "position_m": [2, 0, -20]}],
+      "spawns": [
+        {"id": "ranged_01", "asset": "enemy_ranged", "anchor": "left", "role": "normal", "cue_ms": 0, "spawn_ms": 350, "targetable_ms": 1000, "telegraph_ms": 1400, "attack_ms": 2400},
+        {"id": "melee_02", "asset": "enemy_melee", "anchor": "right", "role": "normal", "cue_ms": 900, "spawn_ms": 1250, "targetable_ms": 1900, "telegraph_ms": 2400, "attack_ms": 3500}
+      ],
+      "gate": {"mode": "all_resolved", "terminal_states": ["dead", "escaped", "disarmed"], "timeout_ms": 30000, "on_timeout": "fail"},
+      "next": "finale"
+    },
+    {
+      "id": "finale",
+      "environment_asset": "room_industrial",
+      "camera": {"position_m": [0, 1.6, -26], "look_at_m": [0, 2, -34], "fov_deg": 65},
+      "settle_ms": 700,
+      "anchors": [{"id": "center", "position_m": [0, 0, -36]}],
+      "spawns": [
+        {"id": "elite_01", "asset": "enemy_elite", "anchor": "center", "role": "elite", "cue_ms": 0, "spawn_ms": 500, "targetable_ms": 1600, "telegraph_ms": 2000, "attack_ms": 3400}
+      ],
+      "gate": {"mode": "all_resolved", "terminal_states": ["dead", "escaped", "disarmed"], "timeout_ms": 60000, "on_timeout": "fail"},
+      "next": null
+    }
+  ]
+}

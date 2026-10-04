@@ -1,0 +1,12 @@
+{
+  "schema_version": "0.1",
+  "status": "metadata_only",
+  "units": "meters",
+  "up_axis": "Y",
+  "assets": [
+    {"id": "room_industrial", "kind": "environment", "path": "res://assets/wrappers/room_industrial.tscn", "size_m": [12, 5, 16], "capabilities": ["room", "floor", "door_socket"]},
+    {"id": "enemy_melee", "kind": "enemy", "path": "res://assets/wrappers/enemy_melee.tscn", "size_m": [0.8, 1.9, 0.8], "capabilities": ["entry", "telegraph", "interruptible", "death"]},
+    {"id": "enemy_ranged", "kind": "enemy", "path": "res://assets/wrappers/enemy_ranged.tscn", "size_m": [0.8, 1.9, 0.8], "capabilities": ["entry", "telegraph", "interruptible", "death"]},
+    {"id": "enemy_elite", "kind": "enemy", "path": "res://assets/wrappers/enemy_elite.tscn", "size_m": [2, 3.5, 2], "capabilities": ["entry", "telegraph", "weakpoint", "phase_change", "death"]}
+  ]
+}

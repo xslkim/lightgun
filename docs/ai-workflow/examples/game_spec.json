@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1",
+  "game_id": "industrial_rail_sample",
+  "platforms": ["windows", "android"],
+  "input_profile": "mouse_simulation",
+  "camera_mode": "rail_with_stations",
+  "weapon": {"magazine_size": 8, "reload_ms": 600, "shot_interval_ms": 180},
+  "limits": {
+    "min_settle_ms": 500,
+    "min_reaction_ms": 300,
+    "min_entry_cue_ms": 300,
+    "max_enemies_per_station": 4
+  },
+  "requirements": [
+    {"id": "REQ-AIM", "rule": "Mouse aim and shot use the same viewport transform", "test": "viewport_grid"},
+    {"id": "REQ-RELOAD", "rule": "R reloads once; no shot when magazine is empty", "test": "reload_boundaries"},
+    {"id": "REQ-FAIR", "rule": "Every damaging attack has a readable target and telegraph", "test": "attack_window_capture"},
+    {"id": "REQ-GATE", "rule": "Station releases after all required actors resolve", "test": "all_actor_terminal_states"},
+    {"id": "REQ-BUILD", "rule": "Windows and Android exported builds start", "test": "exported_build_smoke"}
+  ],
+  "assumptions": ["Offline single player", "Industrial theme is an example", "Timing values require playtest calibration"]
+}
