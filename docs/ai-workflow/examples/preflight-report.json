@@ -1,5 +1,0 @@
-{
-  "status": "PASS",
-  "errors": [],
-  "scope": "metadata preflight only; no Godot, asset existence, rendering or device checks"
-}
